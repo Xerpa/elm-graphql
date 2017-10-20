@@ -88,6 +88,7 @@ import Json.Encode as Encode
 import Json.Decode as Decode exposing (Decoder)
 import GraphQl.Value as Value
 import Helpers
+import RemoteData
 
 
 {-| Requests contains the query and the variables of each GraphQl requests. -}
@@ -402,9 +403,9 @@ addInputField (param, Argument value) =
 
 
 {-| Actually send the GraphQL request! Generates a Cmd, to give to Elm in your update. -}
-send : (Result Http.Error a -> msg) -> Request a -> Cmd msg
-send msg =
-  Http.send msg << toHttpRequest
+send : Request a -> Cmd (RemoteData.WebData a)
+send =
+  RemoteData.sendRequest << toHttpRequest
 
 toHttpRequest : Request a -> Http.Request a
 toHttpRequest request =
