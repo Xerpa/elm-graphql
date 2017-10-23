@@ -1,7 +1,7 @@
 {
-    "version": "2.0.1",
+    "version": "1.0.0",
     "summary": "Fork from ghivert/elm-graphql with RemoteData support",
-    "repository": "https://github.com/ghivert/elm-graphql.git",
+    "repository": "https://github.com/Xerpa/elm-graphql.git",
     "license": "BSD3",
     "source-directories": [
         "src"
