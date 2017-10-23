@@ -1,3 +1,5 @@
+A fork from [ghivert/elm-graphql](https://github.com/ghivert/elm-graphql) with RemoteData support
+
 # Elm GraphQL
 
 ## Alternatives
