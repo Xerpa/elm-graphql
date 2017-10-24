@@ -19,10 +19,11 @@ module Types exposing (..)
 
 import Http exposing (Error)
 import Json.Decode as Decode exposing (Decoder, field, maybe, int, string)
+import RemoteData
 
 
 type Msg
-  = GraphQlMsg (Result Error NameAndAddress)
+  = GraphQlMsg (RemoteData.WebData NameAndAddress)
 
 
 type alias User =
@@ -119,7 +120,8 @@ sendRequest : Int -> Cmd Msg
 sendRequest id =
   baseRequest userRequest decodeNameAndAddress
     |> GraphQl.addVariables [ ("id", Encode.int id) ]
-    |> GraphQl.send GraphQlMsg
+    |> GraphQl.send
+    |> Cmd.map GraphQlMsg
 ```
 
 Licenced BSD3, enjoy the work! GraphQL is amazingly awesome!
