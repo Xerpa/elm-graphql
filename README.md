@@ -2,9 +2,6 @@ A fork from [ghivert/elm-graphql](https://github.com/ghivert/elm-graphql) with R
 
 # Elm GraphQL
 
-## Alternatives
-If you're searching a complete solution including Decoders defined with your query, take a look at [Elm GraphQL in Elm](https://github.com/jamesmacaulay/elm-graphql), and if you're searching for converting .graphql files to Elm, take a look at [GraphQL to Elm](https://github.com/jahewson/elm-graphql)!
-
 ## Opinion
 Just import GraphQL, and write queries! This package suppose your decoders are already written, and do not write decoders. It only provide a nice syntax to do GraphQL queries, and decode the `"data"` at the root of standard GraphQL for you. Just think on your schema, and don't bother with everything else. By not writing custom decoders, you can make multiple queries on the same data, with different schemas each times. They will always be converted to the same type, avoiding you to rewrote a type for each request like others can do. Moreover, it is purely written in Elm, avoiding you to think to recompile .graphql files.
 
@@ -17,7 +14,6 @@ Basically, creates an object with `object`, add some fields with a list of `fiel
 ```elm
 module Types exposing (..)
 
-import Http exposing (Error)
 import Json.Decode as Decode exposing (Decoder, field, maybe, int, string)
 import RemoteData
 
