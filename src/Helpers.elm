@@ -1,33 +1,41 @@
 module Helpers exposing (..)
 
+
 reverseAdd : String -> String -> String
 reverseAdd =
-  flip (++)
+    flip (++)
+
 
 between : String -> String -> String
 between char string =
-  char ++ string ++ char
+    char ++ string ++ char
+
 
 betweenQuotes : String -> String
 betweenQuotes =
-  between "\""
+    between "\""
+
 
 betweenBraces : String -> String
 betweenBraces string =
-  "{" ++ string ++ "}"
+    "{" ++ string ++ "}"
+
 
 betweenBrackets : String -> String
 betweenBrackets string =
-  "[" ++ string ++ "]"
+    "[" ++ string ++ "]"
+
 
 betweenParen : String -> String
 betweenParen string =
-  "(" ++ string ++ ")"
+    "(" ++ string ++ ")"
+
 
 betweenNewline : String -> String
 betweenNewline =
-  between "\n"
+    between "\n"
+
 
 join : List String -> String
 join list =
-  String.join ", " list
+    String.join ", " list
